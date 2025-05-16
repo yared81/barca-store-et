@@ -44,7 +44,42 @@ body {
     text-align: center;
     width: 200px;
 }
+.unix_coll{
+    background-image: url("images/pedri.jpg");
+    height: 100vh;    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.unix_coll h2, .h22 {
+    margin: 0;
+    color: #F5F5F5;
+    font-size: 40px;
+}
 
+.bestseller{
+     background-image: url("images/bestseller.jpg");
+    height: 100vh;    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+}
+ .bestseller h2, .h22 {
+    margin: 0;
+    color: #F5F5F5;
+    font-size: 50px;
+}
 .main_shopnow:hover {
     background-color: #A50044;   /* Barca Blue */
     color: #FFCD00;              /* Text changes to yellow */
@@ -52,7 +87,7 @@ body {
 }
 
 .logo-container {
-    flex: 0 0 70px; /* Reduced from 90px */
+    flex: 0 0 50px; /* Reduced from 90px */
 }
 
 .logo {
@@ -77,8 +112,8 @@ body {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    padding: 0.3rem 0; /* Added small padding */
-    font-size: 0.9rem; /* Slightly smaller font */
+    padding: 0.3rem 0;  
+    font-size: 15px;
 }
 
 .nav-links a:hover {
