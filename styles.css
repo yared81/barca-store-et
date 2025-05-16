@@ -56,7 +56,7 @@ body {
     align-items: center;
     gap: 1rem;
 }
-.unix_coll h2, .h22 {
+.unix_coll h2, .fest {
     margin: 0;
     color: #F5F5F5;
     font-size: 40px;
@@ -251,12 +251,25 @@ body {
     background-color: var(--barca-red);
 }
 
+.club-banner {
+    background-color: var(--barca-blue);
+    color: #F5F5F5;
+    font-size: 12.3vw; /* scales with screen width */
+    font-weight: bold;
+    text-align: center;   
+    width: 100%;
+    text-transform: uppercase;
+}
+.club-banner:hover{
+    color: red;
+}
+
 /* Footer Styles */
 .main-footer {
     background-color: var(--barca-blue);
     color: var(--white);
     padding: 2rem 0 1rem;
-    margin-top: 2rem;
+    
 }
 
 .footer-content {
