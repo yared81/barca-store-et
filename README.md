@@ -1,4 +1,4 @@
-# FC Barcelona Store Clone
+# FC Barcelona Store  
 
 A simplified clone of the FC Barcelona official store website, built with HTML, CSS, and JavaScript.
 
@@ -31,11 +31,7 @@ barca-store/
 1. Clone this repository
 2. Add your own images to the `images` directory
 3. Open `index.html` in your web browser
-
-## Note
-
-This is a frontend-only demo project. No backend functionality is implemented. All interactions (search, buy buttons) are simulated with alerts.
-
+ 
 ## Colors Used
 
 - Barcelona Blue: #004D98
