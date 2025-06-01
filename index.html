@@ -27,6 +27,7 @@
             <input type="search" placeholder="Search products..." aria-label="Search products">
             <button type="button" aria-label="Search">🔍</button>
         </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </header>
 
     <main>
@@ -36,6 +37,43 @@
 
         <section class="featured-products">
             <h2>Featured Products</h2>
+            
+            <!-- Filter Controls -->
+            <div class="filter-controls">
+                <div class="price-filter">
+                    <label>Price Range:</label>
+                    <input type="range" min="0" max="2000" value="2000" class="price-slider">
+                    <span class="price-range">ETB 0 - 2000</span>
+                </div>
+                
+                <div class="category-filter">
+                    <label>Category:</label>
+                    <select class="category-select">
+                        <option value="all">All Categories</option>
+                        <option value="jersey">Jersey</option>
+                        <option value="training">Training</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                
+                <div class="sort-filter">
+                    <label>Sort By:</label>
+                    <select class="sort-select">
+                        <option value="popularity">Popularity</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Enhanced Search -->
+            <div class="search-container">
+                <input type="search" placeholder="Search products..." aria-label="Search products" class="search-input">
+                <button type="button" aria-label="Search">🔍</button>
+                <div class="search-suggestions"></div>
+                <div class="recent-searches"></div>
+            </div>
+
             <div class="products-grid">
                 <article class="product-card">
                     <img src="images/home2.jpg" alt="Home Jersey 2023/24" class="product-image">

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Training - FC Barcelona Store</title>
+    <title>FC Barcelona Training</title>
     <link rel="icon" type="image/png" href="images/fcb_logo.png">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="main-header">
@@ -27,9 +27,12 @@
             </ul>
         </nav>
         <div class="search-container">
-            <input type="search" placeholder="Search products..." aria-label="Search products">
+            <input type="search" placeholder="Search products..." aria-label="Search products" class="search-input">
             <button type="button" aria-label="Search">🔍</button>
+            <div class="search-suggestions"></div>
+            <div class="recent-searches"></div>
         </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </header>
 
     <main>
@@ -38,50 +41,61 @@
                         
         </section>
         <section class="featured-products">
-            <h2>Training Collection</h2>
+            <h2>Featured Products</h2>
+            
+            <!-- Filter Controls -->
+            <div class="filter-controls">
+                <div class="price-filter">
+                    <label>Price Range:</label>
+                    <input type="range" min="0" max="2000" value="2000" class="price-slider">
+                    <span class="price-range">ETB 0 - 2000</span>
+                </div>
+                
+                <div class="category-filter">
+                    <label>Category:</label>
+                    <select class="category-select">
+                        <option value="all">All Categories</option>
+                        <option value="jersey">Jersey</option>
+                        <option value="training">Training</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                
+                <div class="sort-filter">
+                    <label>Sort By:</label>
+                    <select class="sort-select">
+                        <option value="popularity">Popularity</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="products-grid">
-                <article class="product-card">
-                    <img src="images/training2.jpg" alt="Training Jersey" class="product-image">
-                    <h3>Training Jersey</h3>
-                    <p class="price">ETB 1,950</p>
-                    <button class="buy-button">Buy Now</button>
-                </article>
-                <article class="product-card">
-                    <img src="images/training9.jpg" alt="Training Shorts" class="product-image">
-                    <h3>Training Shirt</h3>
+                <article class="product-card" data-category="training">
+                    <img src="images/trainin1.jpg" alt="Training Kit 2023/24" class="product-image">
+                    <h3>Training Kit 2023/24</h3>
                     <p class="price">ETB 1,850</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/training3.jpg" alt="Training Jacket" class="product-image">
-                    <h3>Training Kit</h3>
+                <article class="product-card" data-category="training">
+                    <img src="images/trainin2.jpg" alt="Training Shorts 2023/24" class="product-image">
+                    <h3>Training Shorts 2023/24</h3>
                     <p class="price">ETB 1,750</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/training4.jpg" alt="Training Pants" class="product-image">
-                    <h3>Training Pants</h3>
+                <article class="product-card" data-category="training">
+                    <img src="images/trainin3.jpg" alt="Training Jacket 2023/24" class="product-image">
+                    <h3>Training Jacket 2023/24</h3>
                     <p class="price">ETB 1,650</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/training5.jpg" alt="Training Pants" class="product-image">
-                    <h3>Training Kits</h3>
+                <article class="product-card" data-category="training">
+                    <img src="images/trainin4.jpg" alt="Training T-Shirt 2023/24" class="product-image">
+                    <h3>Training T-Shirt 2023/24</h3>
                     <p class="price">ETB 1,550</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/training7.jpeg" alt="Training Pants" class="product-image">
-                    <h3>Training kit</h3>
-                    <p class="price">ETB 1,450</p>
-                    <button class="buy-button">Buy Now</button>
-                </article>
-                <article class="product-card">
-                    <img src="images/training8.jpg" alt="Training Pants" class="product-image">
-                    <h3>Training Jersey</h3>
-                    <p class="price">ETB 1,350</p>
-                    <button class="buy-button">Buy Now</button>
-                </article> 
             </div>
         </section>
         <section class="club-banner">FC BARCELONA</section>
@@ -98,22 +112,6 @@
                 </ul>
             </div>
             <div class="footer-section">
-                <h4>CUSTOMER SERVICE</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Shipping & Delivery</a></li>
-                    <li><a href="#">Returns & Exchanges</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>LEGAL</h4>
-                <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
                 <h4>HELP CENTER</h4>
                 <ul>
                     <li><a href="#">Contact Us</a></li>
@@ -123,6 +121,14 @@
                     <li><a href="#">Track order information</a></li>
                     <li><a href="#">Order Issues</a></li>
                     <li><a href="#">Account & website </a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>LEGAL</h4>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
                 </ul>
             </div>
             <div class="footer-section">

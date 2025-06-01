@@ -24,111 +24,141 @@
             </ul>
         </nav>
         <div class="search-container">
-            <input type="search" placeholder="Search products..." aria-label="Search products">
+            <input type="search" placeholder="Search products..." aria-label="Search products" class="search-input">
             <button type="button" aria-label="Search">🔍</button>
+            <div class="search-suggestions"></div>
+            <div class="recent-searches"></div>
         </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </header>
 
     <section class="bestseller">
             <h2>Bestsellers</h2> 
-            
-            
-        </section>
+    </section>
+
     <section class="featured-products">
-            <h2> </h2>
+            <h2>Featured Products</h2>
+            
+            <!-- Filter Controls -->
+            <div class="filter-controls">
+                <div class="price-filter">
+                    <label>Price Range:</label>
+                    <input type="range" min="0" max="2000" value="2000" class="price-slider">
+                    <span class="price-range">ETB 0 - 2000</span>
+                </div>
+                
+                <div class="category-filter">
+                    <label>Category:</label>
+                    <select class="category-select">
+                        <option value="all">All Categories</option>
+                        <option value="jersey">Jersey</option>
+                        <option value="training">Training</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                
+                <div class="sort-filter">
+                    <label>Sort By:</label>
+                    <select class="sort-select">
+                        <option value="popularity">Popularity</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="products-grid-bests">
-                <article class="product-card">
+                <article class="product-card" data-category="jersey">
                     <img src="images/bestseller1.jpg" alt="Home Jersey 2023/24" class="product-image">
                     <h3>Gavi Customed  Shirt</h3>
                     <p class="price">ETB 1,850</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-category="jersey">
                     <img src="images/bestseller2.jpg" alt="Away Jersey 2023/24" class="product-image">
                     <h3>Messi Customed  Shirt</h3>
                     <p class="price">ETB 1,750</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-category="jersey">
                     <img src="images/bestseller3.jpg" alt="Training Kit" class="product-image">
                     <h3>CAT Shirt</h3>
                     <p class="price">ETB 1,650</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-category="jersey">
                     <img src="images/bestseller4.jpg" alt="Official Match Ball" class="product-image">
                     <h3>Customed  Shirt</h3>
                     <p class="price">ETB 1,550</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                 <article class="product-card">
+                 <article class="product-card" data-category="jersey">
                     <img src="images/bestseller5.jpg" alt="Official Match Ball" class="product-image">
                     <h3>Customed  Shirt</h3>
                     <p class="price">ETB 1,450</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                 <article class="product-card">
+                 <article class="product-card" data-category="jersey">
                     <img src="images/bestseller6.jpg" alt="Official Match Ball" class="product-image">
                     <h3>Yamal Customed  Shirt</h3>
                     <p class="price">ETB 1,350</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                 <article class="product-card">
+                 <article class="product-card" data-category="jersey">
                     <img src="images/bestseller7.jpg" alt="Home Jersey 2023/24" class="product-image">
                     <h3> Shirt</h3>
                     <p class="price">ETB 1,250</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-category="jersey">
                     <img src="images/bestseller8.jpg" alt="Away Jersey 2023/24" class="product-image">
                     <h3> Shirt</h3>
                     <p class="price">ETB 1,150</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-category="accessories">
                     <img src="images/access12.jpg" alt="Training Kit" class="product-image">
                     <h3>bracelate</h3>
                     <p class="price">ETB 1,456</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-category="jersey">
                     <img src="images/access14.jpg" alt="Official Match Ball" class="product-image">
                     <h3>Jersey</h3>
                     <p class="price">ETB 1,950</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                 <article class="product-card">
+                 <article class="product-card" data-category="accessories">
                     <img src="images/access18.jpg" alt="Official Match Ball" class="product-image">
                     <h3> Water Bottle</h3>
                     <p class="price">ETB 1,550</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                 <article class="product-card">
+                 <article class="product-card" data-category="accessories">
                     <img src="images/access6.jpg" alt="Official Match Ball" class="product-image">
                     <h3>FC Barcelona Stadium</h3>
                     <p class="price">ETB 1,250</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-category="accessories">
                     <img src="images/access9.jpg" alt="Official Match Ball" class="product-image">
                     <h3>FC Barcelona Collection</h3>
                     <p class="price">ETB 1,949</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                 <article class="product-card">
+                 <article class="product-card" data-category="accessories">
                     <img src="images/access8.jpg" alt="Official Match Ball" class="product-image">
                     <h3>FC Barcelona Stadium</h3>
                     <p class="price">ETB 1,109</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                 <article class="product-card">
+                 <article class="product-card" data-category="accessories">
                     <img src="images/ball.jpg" alt="Official Match Ball" class="product-image">
                     <h3>Official Match Ball</h3>
                     <p class="price">ETB 1,850</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
             </div>
-
         </section>
 
 <section class="club-banner">FC BARCELONA</section>        
@@ -170,7 +200,6 @@
                     <a href="#" class="social-link"> <img src="images/x_icon.png"></a>
                     <a href="#" class="social-link"> <img src="images/yt_icon.png"></a>
                     <a href="#" class="social-link"> <img src="images/tt_icon.png"></a>
-                    
                 </div>
             </div>
         </div>
@@ -178,5 +207,7 @@
             <p>&copy; 2025 FC Barcelona. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

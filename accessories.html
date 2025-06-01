@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessories - FC Barcelona Store</title>
+    <title>FC Barcelona Accessories</title>
     <link rel="icon" type="image/png" href="images/fcb_logo.png">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="main-header">
@@ -27,9 +27,12 @@
             </ul>
         </nav>
         <div class="search-container">
-            <input type="search" placeholder="Search products..." aria-label="Search products">
+            <input type="search" placeholder="Search products..." aria-label="Search products" class="search-input">
             <button type="button" aria-label="Search">🔍</button>
+            <div class="search-suggestions"></div>
+            <div class="recent-searches"></div>
         </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
     </header>
 
     <main>
@@ -37,87 +40,169 @@
             <h2>Accessories</h2>            
         </section>
         <section class="featured-products">
-            <h2>Accessories Collection</h2>
+            <h2>Featured Products</h2>
+            
+            <!-- Filter Controls -->
+            <div class="filter-controls">
+                <div class="price-filter">
+                    <label>Price Range:</label>
+                    <input type="range" min="0" max="2000" value="2000" class="price-slider">
+                    <span class="price-range">ETB 0 - 2000</span>
+                </div>
+                
+                <div class="category-filter">
+                    <label>Category:</label>
+                    <select class="category-select">
+                        <option value="all">All Categories</option>
+                        <option value="jersey">Jersey</option>
+                        <option value="training">Training</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+                </div>
+                
+                <div class="sort-filter">
+                    <label>Sort By:</label>
+                    <select class="sort-select">
+                        <option value="popularity">Popularity</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="products-grid">
-                <article class="product-card">
-                    <img src="images/access10.jpg" alt="FC Barcelona Cap" class="product-image">
-                    <h3>FC Barcelona Collection</h3>
-                    <p class="price">ETB 1,949</p>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access1.jpg" alt="FC Barcelona Cap" class="product-image">
+                    <h3>FC Barcelona Cap</h3>
+                    <p class="price">ETB 850</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/access11.jpg" alt="FC Barcelona Scarf" class="product-image">
-                    <h3>FC Barcelona brecelet</h3>
-                    <p class="price">ETB 909</p>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access2.jpg" alt="FC Barcelona Scarf" class="product-image">
+                    <h3>FC Barcelona Scarf</h3>
+                    <p class="price">ETB 750</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/access12.jpg" alt="FC Barcelona Backpack" class="product-image">
-                    <h3>FC Barcelona brecelet</h3>
-                    <p class="price">ETB 899</p>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access3.jpg" alt="FC Barcelona Bag" class="product-image">
+                    <h3>FC Barcelona Bag</h3>
+                    <p class="price">ETB 1,250</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/access13.jpg" alt="FC Barcelona Water Bottle" class="product-image">
-                    <h3>FC Barcelona Ball  </h3>
-                    <p class="price">ETB 999</p>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access4.jpg" alt="FC Barcelona Water Bottle" class="product-image">
+                    <h3>FC Barcelona Water Bottle</h3>
+                    <p class="price">ETB 550</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/access14.jpg" alt="FC Barcelona Water Bottle" class="product-image">
-                    <h3>FC Barcelona Jersey </h3>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access5.jpg" alt="FC Barcelona Backpack" class="product-image">
+                    <h3>FC Barcelona Backpack</h3>
+                    <p class="price">ETB 1,550</p>
+                    <button class="buy-button">Buy Now</button>
+                </article>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access6.jpg" alt="FC Barcelona Jersey" class="product-image">
+                    <h3>FC Barcelona Jersey</h3>
+                    <p class="price">ETB 1,109</p>
+                    <button class="buy-button">Buy Now</button>
+                </article>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access7.jpg" alt="FC Barcelona Water Bottle" class="product-image">
+                    <h3>FC Barcelona Water Bottle</h3>
                     <p class="price">ETB 1,559</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/access15.jpg" alt="FC Barcelona Water Bottle" class="product-image">
-                    <h3>FC Barcelona Jacket  </h3>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access8.jpg" alt="FC Barcelona Water Bottle" class="product-image">
+                    <h3>FC Barcelona Water Bottle</h3>
+                    <p class="price">ETB 1,259</p>
+                    <button class="buy-button">Buy Now</button>
+                </article>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access9.jpg" alt="FC Barcelona Water Bottle" class="product-image">
+                    <h3>FC Barcelona Water Bottle</h3>
+                    <p class="price">ETB 1,559</p>
+                    <button class="buy-button">Buy Now</button>
+                </article>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access10.jpg" alt="FC Barcelona Cap" class="product-image">
+                    <h3>FC Barcelona Cap</h3>
+                    <p class="price">ETB 1,949</p>
+                    <button class="buy-button">Buy Now</button>
+                </article>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access11.jpg" alt="FC Barcelona Scarf" class="product-image">
+                    <h3>FC Barcelona Scarf</h3>
+                    <p class="price">ETB 909</p>
+                    <button class="buy-button">Buy Now</button>
+                </article>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access12.jpg" alt="FC Barcelona Backpack" class="product-image">
+                    <h3>FC Barcelona Backpack</h3>
+                    <p class="price">ETB 899</p>
+                    <button class="buy-button">Buy Now</button>
+                </article>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access13.jpg" alt="FC Barcelona Water Bottle" class="product-image">
+                    <h3>FC Barcelona Water Bottle</h3>
+                    <p class="price">ETB 999</p>
+                    <button class="buy-button">Buy Now</button>
+                </article>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access14.jpg" alt="FC Barcelona Jersey" class="product-image">
+                    <h3>FC Barcelona Jersey</h3>
+                    <p class="price">ETB 1,559</p>
+                    <button class="buy-button">Buy Now</button>
+                </article>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access15.jpg" alt="FC Barcelona Jacket" class="product-image">
+                    <h3>FC Barcelona Jacket</h3>
                     <p class="price">ETB 1,850</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/access16.jpg" alt="FC Barcelona Water Bottle" class="product-image">
-                    <h3>FC Barcelona Bag </h3>
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access16.jpg" alt="FC Barcelona Bag" class="product-image">
+                    <h3>FC Barcelona Bag</h3>
                     <p class="price">ETB 1,750</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/access17.jpg" alt="FC Barcelona Water Bottle" class="product-image">
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access17.jpg" alt="FC Barcelona Hats" class="product-image">
                     <h3>FC Barcelona Hats</h3>
                     <p class="price">ETB 1,650</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
+                <article class="product-card" data-category="accessories">
                     <img src="images/access18.jpg" alt="FC Barcelona Water Bottle" class="product-image">
                     <h3>FC Barcelona Water Bottle</h3>
                     <p class="price">ETB 1,559</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                
-                <article class="product-card">
-                    <img src="images/access3" alt="FC Barcelona Water Bottle" class="product-image">
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access3" alt="FC Barcelona Water Bottle and Bag" class="product-image">
                     <h3>FC Barcelona Water Bottle and Bag</h3>
                     <p class="price">ETB 1,950</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/access4.jpg" alt="FC Barcelona Water Bottle" class="product-image">
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access4.jpg" alt="FC Barcelona Jacket" class="product-image">
                     <h3>FC Barcelona Jacket</h3>
                     <p class="price">ETB 1,450</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/access6.jpg" alt="FC Barcelona Water Bottle" class="product-image">
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access6.jpg" alt="FC Barcelona Stadium" class="product-image">
                     <h3>FC Barcelona Stadium</h3>
                     <p class="price">ETB 1,109</p>
                     <button class="buy-button">Buy Now</button>
                 </article>
-                <article class="product-card">
-                    <img src="images/access8.jpg" alt="FC Barcelona Water Bottle" class="product-image">
+                <article class="product-card" data-category="accessories">
+                    <img src="images/access8.jpg" alt="FC Barcelona Stadium" class="product-image">
                     <h3>FC Barcelona Stadium</h3>
                     <p class="price">ETB 1,259</p>
                     <button class="buy-button">Buy Now</button>
-                </article>                             
+                </article>
             </div>
         </section>
         <section class="club-banner">FC BARCELONA</section>
